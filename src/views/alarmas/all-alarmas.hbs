@@ -1,0 +1,40 @@
+<font color="White"><h1>Alarmas:</h1></font>
+<div class="row">
+  {{#each notes2 }}
+    <div class="col-md-3">
+        <div class="card">
+        <div class="card-body">
+            <h4 class="card-title d-flex justify-content-between align-items-center">
+            {{ title }} 
+            <a href="/alarmas/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+            
+            </h4>
+
+  
+            {{#if recurrente}}
+            <a href="/alarmas/desactivar/{{_id}}"><i class="fas fa-bell"></i></a>Activa
+            {{else}}
+            <a href="/alarmas/activar/{{_id}}"><i class="far fa-bell"></i></a>Desactiva
+            {{/if}}
+                        
+            <p>{{ description }} </p>
+            <p><b>Hora:</b> {{ hora }}</p>
+            <p><b>Fecha</b>{{ fecha }} </p>
+            <!-- DELETE REQUEST -->
+            <form action="/alarmas/delete/{{_id}}?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
+            </form>
+        </div>
+        </div>
+    </div>
+  {{else}}
+  <div class="card mx-auto">
+    <div class="card-body">
+      <h1>Hola</h1>
+      <p clsss="lead">No has creado ninguna Alarma.</p>
+      <a href="/alarmas/nueva-alarma" class="btn btn-success btn-block">Create Una!</a>
+    </div>
+  </div>
+  {{/each}}
+</div>

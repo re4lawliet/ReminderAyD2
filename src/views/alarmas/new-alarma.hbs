@@ -1,0 +1,124 @@
+
+<div class="col-md-4 mx-auto">
+  <div class="card text-center">    
+    <div class="card-header">
+      <h3>Nueva Alarma</h3>
+    </div>
+    <div class="card-body">
+      <form action="/alarmas/crear" method="POST">
+        <div class="form-group">
+          <input type="text" name="title" class="form-control" placeholder="Title" autofocus/>
+        </div>
+        <div class="form-group">
+          <textarea name="description" class="form-control" placeholder="Description"></textarea>
+        </div>
+        <div class="form-group">
+
+        Aplicación a fín de alarma:
+        <div class="form-group">
+            <select type="text" name="aplicacion" >
+                <option value="Facebook" >Facebook</option>
+                <option value="YouTube" >YouTube</option>
+                <option value="Google" >Google</option>
+                <option value="Instagram" >Instagram</option>
+                <option value="Ninguna" >Ninguna</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <input type="text" name="cuando" class="form-control" placeholder="Cuando?" autofocus/>
+        </div>
+        <div class="form-group">
+          <input type="text" name="donde" class="form-control" placeholder="Donde?" autofocus/>
+        </div>
+        Recurrente
+        <div class="form-group">
+            <select type="text" name="recurrente" >
+                <option value="true" >Si</option>
+                <option value="false" >No</option>
+            </select>
+        </div>
+        Programacion
+        <div class="form-group">
+            <select type="text" name="programacion" >
+                <option value="Diario" >Diario</option>
+                <option value="Mensual" >Mensual</option>
+                <option value="Semanal" >Semanal</option>
+            </select>
+        </div>
+
+        Fecha Programada:
+        <div class="form-group">
+            <select type="text" name="dia" >
+                <option value="01" >1</option>
+                <option value="02" >2</option>
+                <option value="03" >3</option>
+                <option value="04" >4</option>
+                <option value="05" >5</option>
+                <option value="06" >6</option>
+                <option value="07" >7</option>
+                <option value="08" >8</option>
+                <option value="09" >9</option>
+                <option value="10" >10</option>
+            </select>
+            <select type="text" name="mes" >
+                <option value="01" >Enero</option>
+                <option value="02" >Febrero</option>
+                <option value="03" >Marzo</option>
+                <option value="04" >Abril</option>
+                <option value="05" >Mayo</option>
+            </select>
+            <select type="text" name="año" >
+                <option value="2020" >2020</option>
+                <option value="2021" >2021</option>
+                <option value="2022" >2022</option>
+                <option value="2023" >2023</option>
+            </select>
+        </div>
+
+        Hora Programada:
+        <div class="form-group">
+            <select type="text" name="horas" >
+                <option value="01" >1</option>
+                <option value="02" >2</option>
+                <option value="03" >3</option>
+                <option value="04" >4</option>
+                <option value="05" >5</option>
+                <option value="06" >6</option>
+                <option value="07" >7</option>
+                <option value="08" >8</option>
+                <option value="09" >9</option>
+                <option value="10" >10</option>
+                <option value="11" >11</option>
+                <option value="12" >12</option>
+            </select>
+            <select type="text" name="minutos" >
+                <option value="00" >00</option>
+                <option value="01" >1</option>
+                <option value="02" >2</option>
+                <option value="03" >3</option>
+                <option value="04" >4</option>
+                <option value="05" >5</option>
+                <option value="06" >6</option>
+                <option value="07" >7</option>
+                <option value="08" >8</option>
+                <option value="09" >9</option>
+                <option value="10" >10</option>
+            </select>
+             <select type="text" name="horario" >
+                <option value="PM" >PM</option>
+                <option value="AM" >AM</option>
+            </select>
+        </div>
+        
+          <button class="btn btn-primary btn-block" type="submit">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+ 
