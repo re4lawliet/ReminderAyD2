@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - 11:d1:2b:f5:f5:d8:08:76:01:7b:14:af:0f:94:55:b5
+            - 42:b7:73:c0:cd:31:3f:a0:5d:dc:65:5d:75:4f:a4:ab
+      - run:
+          name: Setup VirtualEnv and Build
+          command: |
+            echo 'export TAG=0.1.${CIRCLE_BUILD_NUM}' >> $BASH_ENV
+            echo 'export IMAGE_NAME=servicio-reminder' >> $BASH_ENV
+            npm install
+      - setup_remote_docker:
+          docker_layer_caching: false
+      - run:
+          name: Build and push Docker image
+          command: |
+            docker build -t $DOCKER_LOGIN/$IMAGE_NAME:$TAG .
+            echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
+            docker push $DOCKER_LOGIN/$IMAGE_NAME:$TAG
+      - run:
+          name: Deploy app to GCP via docker
+          command: |
+            ssh -o StrictHostKeyChecking=no re4lawliet@34.68.215.13 "/bin/bash ./deploy_app.sh $DOCKER_LOGIN/$IMAGE_NAME:$TAG"
