@@ -51,7 +51,7 @@ global.globalUser = "User";
 // Routes
 app.use(require('./routes/index.js'));
 app.use(require('./routes/users.js'));
-//app.use(require('./routes/notes.js'));
+app.use(require('./routes/notes.js'));
 
 // Static Filesa
 app.use(express.static(path.join(__dirname, 'public')));
