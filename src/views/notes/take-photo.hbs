@@ -1,0 +1,27 @@
+{{#each veh}}
+<div class="col-md-4 mx-auto">
+  <div class="card text-center">
+    <div class="card-header">
+      <h3>Ingreso de Fotos: {{id_nota}} </h3>
+    </div>
+    <div class="card-body">
+      <form action="/subir/{{id_nota}}" method="post" enctype="multipart/form-data">
+        <label class="control-label">Agregar Foto</label>
+        <input type="file" name="foto1" id="foto1" class="form-control" accept="image/*">
+        <div class="form-group">
+            <select type="text" name="foto1_e" >
+                <option value="1" >publica</option>
+                <option value="0" >privada</option>
+            </select>
+        </div>
+               
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Guardar Fotos
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+  {{/each}}
