@@ -8,10 +8,11 @@ const express = require('express');
 
  describe('Registrar', function() {
     describe('POST', function(){
-        it('Deberia retornar "User Agregado con Exito"',function(){
+        /*it('Deberia retornar "User Agregado con Exito"',function(){
             let user = { name:"prueba1", email:"prueba@gmail.com", password:"1234", confirm_password:"1234" }
             request.post('/users/registro').send(user).expect('User Agregado con Exito');
         });
+        */
         it('Deberia retornar "Contraseña no coincide"',function(){
             let user = { name:"prueba1", email:"prueba@gmail.com", password:"1234", confirm_password:"1235" }
             request.post('/users/registro').send(user).expect('Contraseña no coincide');
@@ -22,7 +23,7 @@ const express = require('express');
         });
         
         it('Deberia retornar "El Usuario ya esta en Uso"',function(){
-            let user = { name:"prueba1", email:"prueba@gmail.com", password:"1234", confirm_password:"1234" }
+            let user = { name:"Carlos Andree Avalos Soto", email:"aavalosoto@gmail.com", password:"admin", confirm_password:"admin" }
             request.post('/users/registro').send(user).expect('El Usuario ya esta en Uso');
         });
         
