@@ -28,7 +28,7 @@ router.post('/users/registro', async(req, res) => {
         errors.push({text:'Contraseña no coincide'});
     }
     if(password.length < 4){
-        errors.push({text:'La contraseña debe ser mayor que 4 caracteres',});
+        errors.push({text:'La contraseña debe ser mayor que 4 caracteres'});
     }
 
     if(errors.length>0){
@@ -40,7 +40,7 @@ router.post('/users/registro', async(req, res) => {
         const emailuser=await User.findOne({email: email});
         
         if(emailuser){
-            errors.push({text:'El Usuario ya esta en Uso',});
+            errors.push({text:'El Usuario ya esta en Uso'});
             res.render('users/registro.hbs', {errors});
         }else{
             const newuser = new User({ name, email, password });
