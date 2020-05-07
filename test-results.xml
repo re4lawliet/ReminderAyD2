@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.0010" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2020-05-07T03:17:48" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Registrar" timestamp="2020-05-07T03:17:48" tests="0" file="/Users/carlosmonterroso/Desktop/Reminder/test/testRegistro.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="POST" timestamp="2020-05-07T03:17:48" tests="3" file="/Users/carlosmonterroso/Desktop/Reminder/test/testRegistro.js" time="0.0010" failures="0">
+    <testcase name="Registrar POST Deberia retornar &quot;Contraseña no coincide&quot;" time="0.0010" classname="Deberia retornar &quot;Contraseña no coincide&quot;">
+    </testcase>
+    <testcase name="Registrar POST Deberia retornar &quot;La contraseña debe ser mayor que 4 caracteres&quot;" time="0.0000" classname="Deberia retornar &quot;La contraseña debe ser mayor que 4 caracteres&quot;">
+    </testcase>
+    <testcase name="Registrar POST Deberia retornar &quot;El Usuario ya esta en Uso&quot;" time="0.0000" classname="Deberia retornar &quot;El Usuario ya esta en Uso&quot;">
+    </testcase>
+  </testsuite>
+</testsuites>
