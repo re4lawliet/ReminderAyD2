@@ -24,10 +24,6 @@ jobs:
             echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
             docker push $DOCKER_LOGIN/$IMAGE_NAME:$TAG
       - run:
-        name: Ejecutar Pruebas Unitarias
-        command: |
-            mocha
-      - run:
           name: Deploy app to GCP via docker
           command: |
             ssh -o StrictHostKeyChecking=no re4lawliet@104.198.219.201 "/bin/bash ./deploy_app.sh $DOCKER_LOGIN/$IMAGE_NAME:$TAG"
