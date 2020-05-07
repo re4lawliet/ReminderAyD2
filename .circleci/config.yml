@@ -15,9 +15,11 @@ jobs:
             echo 'export TAG=0.1.${CIRCLE_BUILD_NUM}' >> $BASH_ENV
             echo 'export IMAGE_NAME=servicio-reminder' >> $BASH_ENV
             npm install
+            npm i -g mocha
+            npm i supertest
             ls -l
             mocha
-
+              
       - setup_remote_docker:
           docker_layer_caching: false
       - run:
