@@ -19,6 +19,7 @@ jobs:
           name: Ejecutar Pruebas Unitarias
           command: |
               ls -l
+              mocha
       - setup_remote_docker:
           docker_layer_caching: false
       - run:
