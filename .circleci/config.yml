@@ -16,6 +16,11 @@ jobs:
             echo 'export IMAGE_NAME=servicio-reminder' >> $BASH_ENV
             npm install
             npm run test
+      
+      - run:
+          name: Pruebas Automatizadas
+          command: |
+            npm run test
            
       - setup_remote_docker:
           docker_layer_caching: false
