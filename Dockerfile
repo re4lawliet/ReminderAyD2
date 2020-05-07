@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 RUN npm install
+RUN npm -g mocha
+RUN npm i supertest
 
 EXPOSE 3000
 
