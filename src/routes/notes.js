@@ -93,7 +93,7 @@ router.post('/subir/:id', upload.single('foto1'), async(req,res) =>{
 
     const new_imagen = new NotaGaleria();
     new_imagen.id_nota = req.params.id;
-    new_imagen.foto = 'http://34.68.215.13/img/'+req.file.originalname;
+    new_imagen.foto = 'http://104.198.219.201/img/'+req.file.originalname;
     new_imagen.estado = req.body.foto1_e;
     await new_imagen.save();
 
