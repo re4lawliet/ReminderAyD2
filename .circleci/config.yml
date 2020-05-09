@@ -18,7 +18,7 @@ jobs:
             npm run test
       
       - run:
-          name: Pruebas Automatizadas
+          name: Pruebas Automatizadas Calificacion
           command: |
             npm run test
            
